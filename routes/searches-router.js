@@ -2,22 +2,17 @@
 const express = require('express')
 const router = express.Router()
 
+const searchesCtrl = require('../controllers/searches-controller')
+
 // ROUTES
 
 // Searches Index Route
-router.get('/', async (req, res) => {
-    res.status(200).json({message: 'Hit Searches Index Route'})
-})
+router.get('/', searchesCtrl.index)
 
 // Searches Create Route
-router.post('/', async (req, res) => {
-    console.log(req.body)
-    res.status(201).json({message: 'Hit Searches Create Route'})
-})
+router.post('/', searchesCtrl.create)
 
 // Searches Show Route
-router.get('/:id', async (req, res) => {
-    res.status(200).json({message: 'Hit Searches Show Route: ' + req.params.id})
-})
+router.get('/:id', searchesCtrl.getOne)
 
 module.exports = router
