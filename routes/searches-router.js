@@ -15,4 +15,7 @@ router.post('/', searchesCtrl.create)
 // Searches Show Route
 router.get('/:id', searchesCtrl.getOne)
 
+// Searches Delete Route
+router.delete('/:id', searchesCtrl.delete)
+
 module.exports = router

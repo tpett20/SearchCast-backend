@@ -31,8 +31,18 @@ async function detail(req, res, next) {
     }
 }
 
+// Destroy
+async function destroy(req, res, next) {
+    try {
+        res.status(200).json(await Search.findByIdAndDelete(req.params.id))
+    } catch (err) {
+        res.status(400).json({error: err.message})
+    }
+}
+
 module.exports = {
     index, 
     create,
-    getOne: detail
+    getOne: detail, 
+    delete: destroy
 }
