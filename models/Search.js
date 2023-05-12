@@ -4,6 +4,7 @@ const mongoose = require('mongoose')
 // MODEL
 const SearchSchema = new mongoose.Schema({
     input: {type: String, required: true},
+    user: String,
 }, {
     timestamps: true
 })
